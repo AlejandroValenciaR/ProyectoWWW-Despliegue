@@ -20,18 +20,18 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li>
-                            <a href="#">
+                        <li class="active">
+                            <a href="{% url 'index' %}">
                                 <div style="text-align: left" class="fa fa-dashboard">&nbsp;&nbsp;Dashboard</div>
                             </a>
                         </li>
-                        <li class="active">
-                            <a href="{% url 'operador_eventos_ver' %}">
+                        <li >
+                            <a href="{% url 'gerente_eventos_ver' %}">
                                 <div style="text-align: left" class="fa fa-list">&nbsp;&nbsp;Listar Eventos</div>
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
+                        <li >
+                            <a href="{% url 'gerente_participantes' %}">
                                 <div style="text-align: left" class="fa fa-users">&nbsp;&nbsp;Participantes</div>
                             </a>
                         </li>
@@ -45,27 +45,22 @@
                     </a>
                     <ul class="treeview-menu">
                         <li>
-                            <a href="#">
-                                <div style="text-align: left" class="fa fa-dashboard">&nbsp;&nbsp;Dashboard</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="{% url 're_1' %}">
                                 <div style="text-align: left" class="fa fa-hand-o-right">&nbsp;&nbsp;Reporte 1</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{% url 're_2' %}">
                                 <div style="text-align: left" class="fa fa-hand-o-right">&nbsp;&nbsp;Reporte 2</div>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class=""><a href="#">
+                <li class=""><a href="{% url 'all_news' %}">
                     <i class="fa fa-bullhorn"></i>
                     <span>Noticias</span></a>
                 </li>
-                <li class=""><a href="#">
+                <li class=""><a href="{% url 'ge_cal' %}">
                     <i class="fa  fa-calendar"></i>
                     <span>Calendario</span></a>
                 </li>

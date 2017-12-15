@@ -6,8 +6,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.forms.models import model_to_dict
 from eventos.forms import *
-from eventos.models import Perfiles, Evento, Noticia, Inscripcion
+from eventos.models import Perfiles, Evento, Noticia, Inscripcion, Actividad, Inscripcion_operador
 from django.contrib import messages
+from django.db import IntegrityError, transaction
 
 
 def index(request):
@@ -372,7 +373,7 @@ def admin_modificar_usuario(request):
                 'pais': usuario.pais,
                 'ciudad': usuario.ciudad,
                 'tipo': usuario.tipo,
-                'estado' : usuario.estado,
+                'estado': usuario.estado,
                 'user': id
 
             }
@@ -567,7 +568,7 @@ def operador_modificar_noticia(request):
                 'estado': noticia.estado,
                 'evento': noticia.evento.id,
                 'fecha_publicacion': noticia.fecha_publicacion,
-                'imagen' : noticia.banner,
+                'imagen': noticia.banner,
                 'noticia_select': id,
             }
             form_r = ModificarNoticia(initial=data)
@@ -617,6 +618,7 @@ def operador_modificar_noticia(request):
                 return redirect('operador_noticia_select_modify')
             return redirect('index')
 
+
 def public_event(request, event_id):
     context = {}
 
@@ -637,22 +639,23 @@ def public_event(request, event_id):
 
 
 def public_new(request, new_id):
-        context = {}
+    context = {}
 
-        if request.user.is_anonymous:
+    if request.user.is_anonymous:
+        noticia_seleccionado = get_object_or_404(Noticia, pk=new_id)
+        context['noticia'] = noticia_seleccionado
+        return render(request, 'eventos/users/usuario_publico/usuario_publico_noticia.html', context)
+
+    else:
+
+        if request.user.perfiles.session == "2":
+            return redirect('lock')
+
+        else:
             noticia_seleccionado = get_object_or_404(Noticia, pk=new_id)
             context['noticia'] = noticia_seleccionado
             return render(request, 'eventos/users/usuario_publico/usuario_publico_noticia.html', context)
 
-        else:
-
-            if request.user.perfiles.session == "2":
-                return redirect('lock')
-
-            else:
-                noticia_seleccionado = get_object_or_404(Noticia, pk=new_id)
-                context['noticia'] = noticia_seleccionado
-                return render(request, 'eventos/users/usuario_publico/usuario_publico_noticia.html', context)
 
 def all_events(request):
     context = {}
@@ -672,6 +675,7 @@ def all_events(request):
             context["eventos_lista"] = Eventos
             return render(request, 'eventos/users/usuario_publico/eventos.html', context)
 
+
 def all_news(request):
     context = {}
 
@@ -689,6 +693,7 @@ def all_news(request):
             Noticias = Noticia.objects.all()
             context["noticias_lista"] = Noticias
             return render(request, 'eventos/users/usuario_publico/noticias.html', context)
+
 
 def ins_event(request, event_id):
     context = {}
@@ -714,7 +719,8 @@ def ins_event(request, event_id):
             participante.save()
 
             messages.success(request, "Inscripción Realizada")
-            return redirect("http://127.0.0.1:8000/eventos/11ce90de02275791ef32cfdbcbd4c754/8875db2de54c570d54de078e232a7767/" + participante.id.__str__())
+            return redirect(
+                "http://127.0.0.1:8000/eventos/11ce90de02275791ef32cfdbcbd4c754/8875db2de54c570d54de078e232a7767/" + participante.id.__str__())
         else:
             evento_seleccionado = get_object_or_404(Evento, pk=event_id)
             context['evento'] = evento_seleccionado
@@ -728,6 +734,7 @@ def ins_event(request, event_id):
         context['formulario'] = inscripcion
         return render(request, 'eventos/users/usuario_publico/inscripcion.html', context)
 
+
 def datos_pago(request, ins_id):
     context = {}
     participante = get_object_or_404(Inscripcion, pk=ins_id)
@@ -735,6 +742,7 @@ def datos_pago(request, ins_id):
     context['evento'] = evento_seleccionado
     context['inscrito'] = participante
     return render(request, 'eventos/users/usuario_publico/datos_pago.html', context)
+
 
 def consultar_categoria_inscripcion(request):
     context = {}
@@ -749,12 +757,15 @@ def consultar_categoria_inscripcion(request):
                 return redirect('con_cat_ins_ce')
         else:
             context['form'] = form
-            return render(request, 'eventos/users/usuario_publico/consultasIncripciones/seleccionar_categoria.html', context)
+            return render(request, 'eventos/users/usuario_publico/consultasIncripciones/seleccionar_categoria.html',
+                          context)
 
     else:
         form = seleccionarTipoConsultaInscripcion()
         context['form'] = form
-        return render(request, 'eventos/users/usuario_publico/consultasIncripciones/seleccionar_categoria.html',context)
+        return render(request, 'eventos/users/usuario_publico/consultasIncripciones/seleccionar_categoria.html',
+                      context)
+
 
 def consultar_categoria_pago(request):
     context = {}
@@ -768,11 +779,12 @@ def consultar_categoria_pago(request):
             if Inscripcion.objects.filter(id=numero).exists():
                 participante = Inscripcion.objects.get(id=numero)
                 context['participante'] = participante
-                return redirect("http://127.0.0.1:8000/eventos/consultar/inscripcion/" + participante.id.__str__() + "/resultado")
+                return redirect(
+                    "http://127.0.0.1:8000/eventos/consultar/inscripcion/" + participante.id.__str__() + "/resultado")
             else:
                 form = consultarPorNumeroPago()
                 context['form'] = form
-                messages.error(request,"Este numero de pago no existe")
+                messages.error(request, "Este numero de pago no existe")
                 return render(request, 'eventos/users/usuario_publico/consultasIncripciones/consulta_pago.html',
                               context)
 
@@ -788,6 +800,7 @@ def consultar_categoria_pago(request):
                       'eventos/users/usuario_publico/consultasIncripciones/consulta_pago.html',
                       context)
 
+
 def consultar_categoria_cedula(request):
     context = {}
 
@@ -801,12 +814,14 @@ def consultar_categoria_cedula(request):
             if Inscripcion.objects.filter(inscrito=numero, evento=evento).exists():
                 participante = Inscripcion.objects.get(inscrito=numero, evento=evento)
                 context['participante'] = participante
-                return redirect("http://127.0.0.1:8000/eventos/consultar/inscripcion/" + participante.id.__str__() + "/resultado")
+                return redirect(
+                    "http://127.0.0.1:8000/eventos/consultar/inscripcion/" + participante.id.__str__() + "/resultado")
             else:
                 form = consultarCedulaEvento()
                 context['form'] = form
                 messages.error(request, "No existe incripción con estos datos")
-                return render(request, 'eventos/users/usuario_publico/consultasIncripciones/conuslta_cedula.html', context)
+                return render(request, 'eventos/users/usuario_publico/consultasIncripciones/conuslta_cedula.html',
+                              context)
         else:
             context['form'] = form
             return render(request, 'eventos/users/usuario_publico/consultasIncripciones/conuslta_cedula.html', context)
@@ -814,7 +829,8 @@ def consultar_categoria_cedula(request):
     else:
         form = consultarCedulaEvento()
         context['form'] = form
-        return render(request, 'eventos/users/usuario_publico/consultasIncripciones/conuslta_cedula.html',context)
+        return render(request, 'eventos/users/usuario_publico/consultasIncripciones/conuslta_cedula.html', context)
+
 
 def resultado_consulta_inscripcion(request, pay_id):
     context = {}
@@ -822,11 +838,12 @@ def resultado_consulta_inscripcion(request, pay_id):
     context['participante'] = participante
     return render(request, 'eventos/users/usuario_publico/consultasIncripciones/resultado.html', context)
 
+
 def ver_pre_ins(request):
     context = {}
 
     if request.user.is_anonymous:
-        return redirect(index())
+        return redirect('index')
     else:
 
         if request.user.perfiles.tipo == "operador":
@@ -838,39 +855,50 @@ def ver_pre_ins(request):
         else:
             return redirect('index')
 
+
 def aceptar_ins(request, pay_id):
-
     context = {}
+    try:
+        with transaction.atomic():
+            inscripcion = Inscripcion.objects.get(id=pay_id)
 
-    inscripcion = Inscripcion.objects.get(id=pay_id)
+            if inscripcion.confirmar_pago(request):
+                ins = Inscripcion_operador()
 
-    if inscripcion.confirmar_pago(request):
-        messages.success(request, "Inscripción aceptada")
-        return redirect('ver_pre_ins')
-    else:
-        messages.error(request, "El pago no se ha registrado")
-        return redirect('ver_pre_ins')
+                ins.operador = request.user
+                ins.inscripcion = inscripcion
+
+                ins.save()
+                messages.success(request, "Inscripción aceptada")
+                return redirect('ver_pre_ins')
+            else:
+                messages.error(request, "El pago no se ha registrado")
+                return redirect('ver_pre_ins')
+    except IntegrityError:
+        messages.error(request, "Operacion abortada, fallo inesperado")
+        return redirect('index')
 
 
 def rechazar_ins(request, pay_id):
-
     context = {}
 
     inscripcion = Inscripcion.objects.get(id=pay_id)
 
     if inscripcion.confirmar_pago(request):
-        messages.error(request, "Esta inscripción ya fue pagada, no puede rechazarla, se movio a la seccion de inscritos")
+        messages.error(request,
+                       "Esta inscripción ya fue pagada, no puede rechazarla, se movio a la seccion de inscritos")
         return redirect('ver_pre_ins')
     else:
         inscripcion.delete()
         messages.success(request, "incripción rechazada")
         return redirect('ver_pre_ins')
 
+
 def ver_ins(request):
     context = {}
 
     if request.user.is_anonymous:
-        return redirect(index())
+        return redirect('index')
     else:
 
         if request.user.perfiles.tipo == "operador":
@@ -882,11 +910,153 @@ def ver_ins(request):
         else:
             return redirect('index')
 
+
 def cr_act(request):
     context = {}
-    return render(request,'eventos/users/operadorMenu/crear_actividad.html',context)
+    if request.user.is_anonymous:
+        return redirect('index')
+    else:
+        if request.user.perfiles.session == 2:
+            return redirect('lock')
+        elif request.user.perfiles.tipo == "operador":
+            if request.method == "POST":
+                form = crearActividad(request.POST)
+
+                if form.is_valid():
+                    actividad = Actividad()
+
+                    evento = Evento.objects.get(id=form.cleaned_data['evento'])
+
+                    actividad.estado = form.cleaned_data['estado']
+                    actividad.nombre = form.cleaned_data['nombre']
+                    actividad.descripcion = form.cleaned_data['descripcion']
+                    actividad.dia_actividad = form.cleaned_data['dia_actividad']
+                    actividad.hora_inicio = form.cleaned_data['hora_inicio']
+                    actividad.hora_fin = form.cleaned_data['hora_fin']
+                    actividad.evento = evento
+
+                    actividad.save()
+
+                    form = crearActividad()
+                    context['form'] = form
+                    messages.success(request, 'Actividad creada')
+                    return render(request, 'eventos/users/operadorMenu/crear_actividad.html', context)
+
+                else:
+                    context['form'] = form
+                    messages.error(request, 'Error en el formulario')
+                    return render(request, 'eventos/users/operadorMenu/crear_actividad.html', context)
+            else:
+                form = crearActividad()
+                context['form'] = form
+                return render(request, 'eventos/users/operadorMenu/crear_actividad.html', context)
+        else:
+            return redirect('index')
+
 
 def list_mod_act(request):
-    return redirect('index')
+    context = {}
+    actividades = Actividad.objects.all()
+    context['actividades'] = actividades
+    return render(request, 'eventos/users/operadorMenu/listar_actividades.html', context)
 
 
+def edit_act(request, act_id):
+    context = {}
+    if request.user.is_anonymous:
+        return redirect('index')
+    else:
+        if request.user.perfiles.session == 2:
+            return redirect('lock')
+        elif request.user.perfiles.tipo == "operador":
+            if request.method == "POST":
+                form = modificarActividad(request.POST)
+
+                if form.is_valid():
+                    actividad = Actividad.objects.get(id=act_id)
+
+                    evento = Evento.objects.get(id=form.cleaned_data['evento'])
+
+                    actividad.estado = form.cleaned_data['estado']
+                    actividad.nombre = form.cleaned_data['nombre']
+                    actividad.descripcion = form.cleaned_data['descripcion']
+                    actividad.dia_actividad = form.cleaned_data['dia_actividad']
+                    actividad.hora_inicio = form.cleaned_data['hora_inicio']
+                    actividad.hora_fin = form.cleaned_data['hora_fin']
+                    actividad.evento = evento
+
+                    actividad.save()
+
+                    form = crearActividad()
+                    context['form'] = form
+                    messages.success(request, 'Actividad modificada')
+                    return redirect('list_mod_act')
+
+                else:
+                    context['form'] = form
+                    messages.error(request, 'Error en el formulario')
+                    return render(request, 'eventos/users/operadorMenu/modificar_actividad.html', context)
+            else:
+                actividad = Actividad.objects.get(id=act_id)
+                form = modificarActividad(model_to_dict(actividad))
+                context['form'] = form
+                return render(request, 'eventos/users/operadorMenu/modificar_actividad.html', context)
+        else:
+            return redirect('index')
+
+
+def gerente_ver_eventos(request):
+    context = {}
+    Eventos = Evento.objects.all()
+    context['eventos'] = Eventos
+    if request.user.is_anonymous:
+        return redirect('index')
+    else:
+        if request.user.perfiles.tipo == "gerente":
+            return render(request, "eventos/users/gerenteMenu/ver_eventos_gerente.html", context)
+        return redirect('index')
+
+
+def gerente_participantes(request):
+    context = {}
+
+    if request.user.is_anonymous:
+        return redirect('index')
+    else:
+
+        if request.user.perfiles.tipo == "gerente":
+
+            inscritos = Inscripcion.objects.filter()
+            context['inscritos'] = inscritos
+            return render(request, 'eventos/users/gerenteMenu/ver_participantes.html', context)
+
+        else:
+            return redirect('index')
+
+
+def report_1(request):
+    context = {}
+    lista = [
+        [event.nombre.__str__(), Inscripcion.objects.filter(evento=event).count()] for event in
+        Evento.objects.all().order_by('fecha_creacion')[:12]
+    ]
+    context['lista'] = lista
+    return render(request, 'eventos/users/gerenteMenu/reporte1.html', context)
+
+
+def report_2(request):
+    context = {}
+    lista = [
+        [perfil.nombre.__str__(), Noticia.objects.filter(autor=perfil.usuario).count()] for perfil in
+        Perfiles.objects.all().filter(tipo="operador")[:12]
+    ]
+    context['lista'] = lista
+    return render(request, 'eventos/users/gerenteMenu/reporte2.html', context)
+
+def ge_calendar(request):
+    context = {}
+    lista = [
+        [event.nombre.__str__(), event.fecha_inicio.strftime('%Y/%m/%d'), event.fecha_fin.strftime('%Y/%m/%d')] for event in Evento.objects.all()
+    ]
+    context['lista'] = lista
+    return render(request,'eventos/users/gerenteMenu/calendario.html',context)

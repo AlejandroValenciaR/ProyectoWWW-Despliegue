@@ -499,7 +499,7 @@ class crearActividad(forms.Form):
         ('INACTIVA', 'Inactiva')
     )
     nombre = forms.CharField(max_length=200)
-    descripcion = forms.CharField(max_length=5000)
+    descripcion = forms.CharField(widget=forms.Textarea(attrs={'rows': 10, 'cols': 100}))
     estado = forms.ChoiceField(choices=STATES)
     dia_actividad = forms.IntegerField()
     hora_inicio = forms.TimeField(widget=forms.TimeInput(attrs={'type': 'time'}))
@@ -507,6 +507,25 @@ class crearActividad(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super(crearActividad, self).__init__(*args, **kwargs)
+        lista = {
+            (event.id, event.nombre) for event in Evento.objects.all()
+        }
+        self.fields['evento'] = forms.ChoiceField(choices=lista)
+
+class modificarActividad(forms.Form):
+    STATES = (
+        ('ACTIVA', 'Activa'),
+        ('INACTIVA', 'Inactiva')
+    )
+    nombre = forms.CharField(max_length=200)
+    descripcion = forms.CharField(widget=forms.Textarea(attrs={'rows': 10, 'cols': 100}))
+    estado = forms.ChoiceField(choices=STATES)
+    dia_actividad = forms.IntegerField()
+    hora_inicio = forms.TimeField(widget=forms.TimeInput(attrs={'type': 'time'}))
+    hora_fin = forms.TimeField(widget=forms.TimeInput(attrs={'type': 'time'}))
+
+    def __init__(self, *args, **kwargs):
+        super(modificarActividad, self).__init__(*args, **kwargs)
         lista = {
             (event.id, event.nombre) for event in Evento.objects.all()
         }

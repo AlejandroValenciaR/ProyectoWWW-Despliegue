@@ -40,7 +40,7 @@ class Evento(models.Model):
     descripcion = models.CharField(max_length=10000, default='No hay descripcion')
 
     def __str__(self):
-        return self.nombre
+        return '%s' % self.nombre
 
 class Actividad(models.Model):
     nombre = models.CharField(max_length=200)

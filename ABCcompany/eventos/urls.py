@@ -12,6 +12,8 @@ urlpatterns = [
     url(r'^lock$', views.lock, name='lock'),
     url(r'^operador/crear_noticia$', views.operador_crear_noticia,name = "operador_noticias"),
     url(r'^operador/ver_noticia$', views.operador_ver_noticias,name = "operador_noticias_ver"),
+    url(r'^gerente/ver_eventos$', views.gerente_ver_eventos,name = "gerente_eventos_ver"),
+    url(r'^gerente/ver_participantes$', views.gerente_participantes,name = "gerente_participantes"),
     url(r'^operador/ver_evento$', views.operador_ver_eventos,name = "operador_eventos_ver"),
     url(r'^operador/crear_evento$', views.operador_crear_evento,name = "operador_eventos_crear"),
     url(r'^operador/modificar_evento$', views.operador_modificar_evento,name = "operador_eventos_modificar"),
@@ -38,4 +40,8 @@ urlpatterns = [
     url(r'^operador/participantes/ver_inscritos', views.ver_ins, name='ver_ins'),
     url(r'^operador/actividades/crear', views.cr_act, name='cr_act'),
     url(r'^operador/actividades/listarmodificar', views.list_mod_act, name='list_mod_act'),
+    url(r'^operador/actividades/editar/(?P<act_id>[0-9]+)', views.edit_act, name='edit_act'),
+    url(r'^gerente/reporte1', views.report_1, name='re_1'),
+    url(r'^gerente/reporte2', views.report_2, name='re_2'),
+    url(r'^gerente/calendario', views.ge_calendar, name='ge_cal'),
 ]

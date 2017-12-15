@@ -23,76 +23,107 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eventos/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="886" column="74" lean-forward="false" selection-start-line="886" selection-start-column="74" selection-end-line="886" selection-end-column="74" />
+            <state relative-caret-position="448">
+              <caret line="1058" column="90" lean-forward="true" selection-start-line="1058" selection-start-column="90" selection-end-line="1058" selection-end-column="90" />
               <folding>
                 <element signature="e#24#60#0" expanded="true" />
-                <element signature="e#467#1450#0" expanded="false" />
-                <element signature="e#1482#2536#0" expanded="false" />
-                <element signature="e#2569#2888#0" expanded="false" />
-                <element signature="e#2918#4807#0" expanded="false" />
-                <element signature="e#4833#6446#0" expanded="false" />
-                <element signature="e#6490#8140#0" expanded="false" />
-                <element signature="e#8181#10415#0" expanded="false" />
-                <element signature="e#10469#10838#0" expanded="false" />
-                <element signature="e#10881#11229#0" expanded="false" />
-                <element signature="e#11272#12861#0" expanded="false" />
-                <element signature="e#12906#15960#0" expanded="false" />
-                <element signature="e#16015#16636#0" expanded="false" />
-                <element signature="e#16695#17290#0" expanded="false" />
-                <element signature="e#17337#19701#0" expanded="false" />
-                <element signature="e#19743#20235#0" expanded="false" />
-                <element signature="e#20295#20894#0" expanded="false" />
-                <element signature="e#20942#23414#0" expanded="false" />
-                <element signature="e#23457#24064#0" expanded="false" />
-                <element signature="e#24108#24765#0" expanded="false" />
-                <element signature="e#24796#25303#0" expanded="false" />
-                <element signature="e#25332#25849#0" expanded="false" />
-                <element signature="e#25889#27741#0" expanded="false" />
-                <element signature="e#27780#28100#0" expanded="false" />
-                <element signature="e#28152#28856#0" expanded="false" />
-                <element signature="e#28901#30175#0" expanded="false" />
-                <element signature="e#30222#31477#0" expanded="false" />
-                <element signature="e#31536#31758#0" expanded="false" />
-                <element signature="e#31790#32201#0" expanded="false" />
-                <element signature="e#32242#32562#0" expanded="false" />
-                <element signature="e#32605#33014#0" expanded="false" />
-                <element signature="e#33042#33441#0" expanded="false" />
+                <element signature="e#550#1533#0" expanded="false" />
+                <element signature="e#1565#2619#0" expanded="false" />
+                <element signature="e#2652#2971#0" expanded="false" />
+                <element signature="e#3001#4890#0" expanded="false" />
+                <element signature="e#4916#6529#0" expanded="false" />
+                <element signature="e#6573#8223#0" expanded="false" />
+                <element signature="e#8264#10498#0" expanded="false" />
+                <element signature="e#10552#10921#0" expanded="false" />
+                <element signature="e#10964#11312#0" expanded="false" />
+                <element signature="e#11355#12944#0" expanded="false" />
+                <element signature="e#12989#16042#0" expanded="false" />
+                <element signature="e#16097#16718#0" expanded="false" />
+                <element signature="e#16777#17372#0" expanded="false" />
+                <element signature="e#17419#19783#0" expanded="false" />
+                <element signature="e#19825#20317#0" expanded="false" />
+                <element signature="e#20377#20976#0" expanded="false" />
+                <element signature="e#21024#23495#0" expanded="false" />
+                <element signature="e#23539#24146#0" expanded="false" />
+                <element signature="e#24186#24799#0" expanded="false" />
+                <element signature="e#24831#25338#0" expanded="false" />
+                <element signature="e#25368#25885#0" expanded="false" />
+                <element signature="e#25926#27795#0" expanded="false" />
+                <element signature="e#27835#28155#0" expanded="false" />
+                <element signature="e#28208#28961#0" expanded="false" />
+                <element signature="e#29007#30303#0" expanded="false" />
+                <element signature="e#30351#31658#0" expanded="false" />
+                <element signature="e#31718#31940#0" expanded="false" />
+                <element signature="e#31973#32384#0" expanded="false" />
+                <element signature="e#32425#33140#0" expanded="false" />
+                <element signature="e#33182#33614#0" expanded="false" />
+                <element signature="e#33643#34042#0" expanded="false" />
+                <element signature="e#34070#35820#0" expanded="false" />
+                <element signature="e#35854#36039#0" expanded="false" />
+                <element signature="e#36077#37902#0" expanded="false" />
+                <element signature="e#37943#38283#0" expanded="false" />
+                <element signature="e#38326#38716#0" expanded="false" />
+                <element signature="e#38746#39043#0" expanded="false" />
+                <element signature="e#39073#39375#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ABCcompany/settings.py">
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eventos/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="82" column="20" lean-forward="true" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
+            <state relative-caret-position="367">
+              <caret line="458" column="23" lean-forward="false" selection-start-line="458" selection-start-column="23" selection-end-line="458" selection-end-column="23" />
               <folding>
-                <element signature="e#314#323#0" expanded="true" />
+                <element signature="e#24#38#0" expanded="true" />
+                <element signature="e#6058#6583#0" expanded="false" />
+                <element signature="e#6618#6885#0" expanded="false" />
+                <element signature="e#6922#8048#0" expanded="false" />
+                <element signature="e#8087#8987#0" expanded="false" />
+                <element signature="e#9028#10553#0" expanded="false" />
+                <element signature="e#10598#11469#0" expanded="false" />
+                <element signature="e#11507#11953#0" expanded="false" />
+                <element signature="e#11995#12466#0" expanded="false" />
+                <element signature="e#12509#13391#0" expanded="false" />
+                <element signature="e#13432#13736#0" expanded="false" />
+                <element signature="e#14088#14403#0" expanded="false" />
+                <element signature="e#14445#14788#0" expanded="false" />
+                <element signature="e#14918#15080#0" expanded="false" />
+                <element signature="e#15140#15254#0" expanded="false" />
+                <element signature="e#15294#16025#0" expanded="false" />
+                <element signature="e#16069#16804#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crear_actividad.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/crear_actividad.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eventos/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="155" column="31" lean-forward="false" selection-start-line="155" selection-start-column="31" selection-end-line="155" selection-end-column="31" />
+            <state relative-caret-position="493">
+              <caret line="45" column="66" lean-forward="true" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eventos/models.py">
+      <file leaf-file-name="gerente.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/gerente.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="71" column="27" lean-forward="false" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
-              <folding>
-                <element signature="e#24#52#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="278">
+              <caret line="62" column="52" lean-forward="false" selection-start-line="62" selection-start-column="52" selection-end-line="62" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="calendario.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/gerenteMenu/calendario.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2160">
+              <caret line="144" column="24" lean-forward="false" selection-start-line="144" selection-start-column="24" selection-end-line="144" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,7 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/eventos/templates/eventos/base2.html" />
         <option value="$PROJECT_DIR$/eventos/templates/eventos/users/register.html" />
         <option value="$PROJECT_DIR$/pago/templates/registrar_pago.html" />
         <option value="$PROJECT_DIR$/ABCcompany/urls.py" />
@@ -137,9 +167,6 @@
         <option value="$PROJECT_DIR$/eventos/templates/eventos/users/administrador.html" />
         <option value="$PROJECT_DIR$/eventos/templates/eventos/users/administradorMenu/modificar_usuario_administrador.html" />
         <option value="$PROJECT_DIR$/eventos/templates/eventos/users/administradorMenu/crear_usuario_administrador.html" />
-        <option value="$PROJECT_DIR$/eventos/models.py" />
-        <option value="$PROJECT_DIR$/eventos/forms.py" />
-        <option value="$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/crear_noticias_operador.html" />
         <option value="$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/crear_evento_operador.html" />
         <option value="$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/modificar_evento_operador.html" />
         <option value="$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/modificar_noticia_operador.html" />
@@ -150,10 +177,21 @@
         <option value="$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/ver_noticias_operador.html" />
         <option value="$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/ver_preinscritos.html" />
         <option value="$PROJECT_DIR$/eventos/templates/eventos/users/operador.html" />
-        <option value="$PROJECT_DIR$/eventos/urls.py" />
-        <option value="$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/crear_actividad.html" />
-        <option value="$PROJECT_DIR$/eventos/views.py" />
+        <option value="$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/crear_noticias_operador.html" />
+        <option value="$PROJECT_DIR$/eventos/forms.py" />
+        <option value="$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/modificar_actividad.html" />
+        <option value="$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/listar_actividades.html" />
         <option value="$PROJECT_DIR$/ABCcompany/settings.py" />
+        <option value="$PROJECT_DIR$/eventos/models.py" />
+        <option value="$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/crear_actividad.html" />
+        <option value="$PROJECT_DIR$/eventos/templates/eventos/users/gerenteMenu/reporte1.html" />
+        <option value="$PROJECT_DIR$/eventos/templates/eventos/users/gerenteMenu/reporte2.html" />
+        <option value="$PROJECT_DIR$/eventos/templates/eventos/users/gerenteMenu/ver_eventos_gerente.html" />
+        <option value="$PROJECT_DIR$/eventos/templates/eventos/users/gerenteMenu/ver_participantes.html" />
+        <option value="$PROJECT_DIR$/eventos/templates/eventos/users/gerente.html" />
+        <option value="$PROJECT_DIR$/eventos/urls.py" />
+        <option value="$PROJECT_DIR$/eventos/views.py" />
+        <option value="$PROJECT_DIR$/eventos/templates/eventos/users/gerenteMenu/calendario.html" />
       </list>
     </option>
   </component>
@@ -230,7 +268,7 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="eventos" type="462c0819:PsiDirectoryNode" />
               <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="operadorMenu" type="462c0819:PsiDirectoryNode" />
+              <item name="gerenteMenu" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -342,82 +380,11 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="12" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///Library/Python/2.7/site-packages/django/forms/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6090">
-          <caret line="425" column="8" lean-forward="false" selection-start-line="425" selection-start-column="8" selection-end-line="425" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" column="50" lean-forward="false" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pago/templates/registrar_pago.html" />
-    <entry file="file://$PROJECT_DIR$/pago/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pago/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ABCcompany/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pago/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="77" lean-forward="false" selection-start-line="8" selection-start-column="77" selection-end-line="8" selection-end-column="77" />
-          <folding>
-            <element signature="e#24#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/eventacademic2.jpg" />
     <entry file="file://$PROJECT_DIR$/pago/templates/pago/registro_pago.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1562">
@@ -606,22 +573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/crear_noticias_operador.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="82" column="21" lean-forward="false" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/crear_evento_operador.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="82" column="21" lean-forward="false" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/modificar_evento_operador.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="568">
@@ -670,14 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/ver_noticias_operador.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="82" column="21" lean-forward="false" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/ver_preinscritos.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="568">
@@ -694,10 +637,154 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/crear_evento_operador.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1022">
+          <caret line="82" column="21" lean-forward="false" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/crear_noticias_operador.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="188" column="38" lean-forward="false" selection-start-line="188" selection-start-column="38" selection-end-line="188" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/ver_noticias_operador.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="62" column="23" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/listar_actividades.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2237">
+          <caret line="197" column="28" lean-forward="false" selection-start-line="197" selection-start-column="28" selection-end-line="197" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/modificar_actividad.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="851">
+          <caret line="270" column="0" lean-forward="true" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ABCcompany/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ABCcompany/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#227#236#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ABCcompany/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="e#314#323#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/crear_actividad.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1277">
+          <caret line="151" column="75" lean-forward="false" selection-start-line="151" selection-start-column="75" selection-end-line="151" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/gerenteMenu/ver_eventos_gerente.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="59" column="54" lean-forward="false" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/gerenteMenu/reporte2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="52" column="49" lean-forward="false" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/gerenteMenu/ver_participantes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="53" column="49" lean-forward="false" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="108" column="14" lean-forward="false" selection-start-line="108" selection-start-column="14" selection-end-line="108" selection-end-column="14" />
+          <folding>
+            <element signature="e#24#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/gerenteMenu/reporte1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="140" column="88" lean-forward="false" selection-start-line="140" selection-start-column="23" selection-end-line="140" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/gerente.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="62" column="52" lean-forward="false" selection-start-line="62" selection-start-column="52" selection-end-line="62" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="45" column="66" lean-forward="true" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/eventos/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="502" column="42" lean-forward="true" selection-start-line="502" selection-start-column="42" selection-end-line="502" selection-end-column="42" />
+        <state relative-caret-position="367">
+          <caret line="458" column="23" lean-forward="false" selection-start-line="458" selection-start-column="23" selection-end-line="458" selection-end-column="23" />
           <folding>
             <element signature="e#24#38#0" expanded="true" />
             <element signature="e#6058#6583#0" expanded="false" />
@@ -710,89 +797,69 @@
             <element signature="e#11995#12466#0" expanded="false" />
             <element signature="e#12509#13391#0" expanded="false" />
             <element signature="e#13432#13736#0" expanded="false" />
-            <element signature="e#13778#14044#0" expanded="false" />
             <element signature="e#14088#14403#0" expanded="false" />
             <element signature="e#14445#14788#0" expanded="false" />
             <element signature="e#14918#15080#0" expanded="false" />
             <element signature="e#15140#15254#0" expanded="false" />
+            <element signature="e#15294#16025#0" expanded="false" />
+            <element signature="e#16069#16804#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="39" column="88" lean-forward="false" selection-start-line="39" selection-start-column="88" selection-end-line="39" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/operadorMenu/crear_actividad.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="155" column="31" lean-forward="false" selection-start-line="155" selection-start-column="31" selection-end-line="155" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eventos/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="886" column="74" lean-forward="false" selection-start-line="886" selection-start-column="74" selection-end-line="886" selection-end-column="74" />
+        <state relative-caret-position="448">
+          <caret line="1058" column="90" lean-forward="true" selection-start-line="1058" selection-start-column="90" selection-end-line="1058" selection-end-column="90" />
           <folding>
             <element signature="e#24#60#0" expanded="true" />
-            <element signature="e#467#1450#0" expanded="false" />
-            <element signature="e#1482#2536#0" expanded="false" />
-            <element signature="e#2569#2888#0" expanded="false" />
-            <element signature="e#2918#4807#0" expanded="false" />
-            <element signature="e#4833#6446#0" expanded="false" />
-            <element signature="e#6490#8140#0" expanded="false" />
-            <element signature="e#8181#10415#0" expanded="false" />
-            <element signature="e#10469#10838#0" expanded="false" />
-            <element signature="e#10881#11229#0" expanded="false" />
-            <element signature="e#11272#12861#0" expanded="false" />
-            <element signature="e#12906#15960#0" expanded="false" />
-            <element signature="e#16015#16636#0" expanded="false" />
-            <element signature="e#16695#17290#0" expanded="false" />
-            <element signature="e#17337#19701#0" expanded="false" />
-            <element signature="e#19743#20235#0" expanded="false" />
-            <element signature="e#20295#20894#0" expanded="false" />
-            <element signature="e#20942#23414#0" expanded="false" />
-            <element signature="e#23457#24064#0" expanded="false" />
-            <element signature="e#24108#24765#0" expanded="false" />
-            <element signature="e#24796#25303#0" expanded="false" />
-            <element signature="e#25332#25849#0" expanded="false" />
-            <element signature="e#25889#27741#0" expanded="false" />
-            <element signature="e#27780#28100#0" expanded="false" />
-            <element signature="e#28152#28856#0" expanded="false" />
-            <element signature="e#28901#30175#0" expanded="false" />
-            <element signature="e#30222#31477#0" expanded="false" />
-            <element signature="e#31536#31758#0" expanded="false" />
-            <element signature="e#31790#32201#0" expanded="false" />
-            <element signature="e#32242#32562#0" expanded="false" />
-            <element signature="e#32605#33014#0" expanded="false" />
-            <element signature="e#33042#33441#0" expanded="false" />
+            <element signature="e#550#1533#0" expanded="false" />
+            <element signature="e#1565#2619#0" expanded="false" />
+            <element signature="e#2652#2971#0" expanded="false" />
+            <element signature="e#3001#4890#0" expanded="false" />
+            <element signature="e#4916#6529#0" expanded="false" />
+            <element signature="e#6573#8223#0" expanded="false" />
+            <element signature="e#8264#10498#0" expanded="false" />
+            <element signature="e#10552#10921#0" expanded="false" />
+            <element signature="e#10964#11312#0" expanded="false" />
+            <element signature="e#11355#12944#0" expanded="false" />
+            <element signature="e#12989#16042#0" expanded="false" />
+            <element signature="e#16097#16718#0" expanded="false" />
+            <element signature="e#16777#17372#0" expanded="false" />
+            <element signature="e#17419#19783#0" expanded="false" />
+            <element signature="e#19825#20317#0" expanded="false" />
+            <element signature="e#20377#20976#0" expanded="false" />
+            <element signature="e#21024#23495#0" expanded="false" />
+            <element signature="e#23539#24146#0" expanded="false" />
+            <element signature="e#24186#24799#0" expanded="false" />
+            <element signature="e#24831#25338#0" expanded="false" />
+            <element signature="e#25368#25885#0" expanded="false" />
+            <element signature="e#25926#27795#0" expanded="false" />
+            <element signature="e#27835#28155#0" expanded="false" />
+            <element signature="e#28208#28961#0" expanded="false" />
+            <element signature="e#29007#30303#0" expanded="false" />
+            <element signature="e#30351#31658#0" expanded="false" />
+            <element signature="e#31718#31940#0" expanded="false" />
+            <element signature="e#31973#32384#0" expanded="false" />
+            <element signature="e#32425#33140#0" expanded="false" />
+            <element signature="e#33182#33614#0" expanded="false" />
+            <element signature="e#33643#34042#0" expanded="false" />
+            <element signature="e#34070#35820#0" expanded="false" />
+            <element signature="e#35854#36039#0" expanded="false" />
+            <element signature="e#36077#37902#0" expanded="false" />
+            <element signature="e#37943#38283#0" expanded="false" />
+            <element signature="e#38326#38716#0" expanded="false" />
+            <element signature="e#38746#39043#0" expanded="false" />
+            <element signature="e#39073#39375#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/models.py">
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/users/gerenteMenu/calendario.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="71" column="27" lean-forward="false" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
-          <folding>
-            <element signature="e#24#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ABCcompany/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="82" column="20" lean-forward="true" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
-          <folding>
-            <element signature="e#314#323#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2160">
+          <caret line="144" column="24" lean-forward="false" selection-start-line="144" selection-start-column="24" selection-end-line="144" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
