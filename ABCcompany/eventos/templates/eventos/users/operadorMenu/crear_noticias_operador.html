@@ -1,0 +1,272 @@
+{% extends 'eventos/base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+
+{% block menu %}
+
+    <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header" style="text-align: center;">Menu Operador</li>
+                <!-- Optionally, you can add icons to the links -->
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-calendar-o"></i> <span>Eventos</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li >
+                            <a href="{% url 'index' %}">
+                                <div style="text-align: left" class="fa fa-dashboard">&nbsp;&nbsp;Dashboard</div>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="{% url 'operador_eventos_crear'%}">
+                                <div style="text-align: left" class="fa fa-users">&nbsp;&nbsp;Crear</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'operador_eventos_select_modify' %}">
+                                <div style="text-align: left" class="fa fa-users">&nbsp;&nbsp;Editar</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'operador_eventos_ver' %}">
+                                <div style="text-align: left" class="fa fa-users">&nbsp;&nbsp;Listar</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="{% url 'operador_noticias' %}"><i class="fa fa-bullhorn"></i> <span>Participantes</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{% url 'ver_pre_ins' %}">
+                                <div style="text-align: left" class="fa fa-plus">&nbsp;Ver Pre-Inscritos</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'ver_ins' %}">
+                                <div style="text-align: left" class="fa fa-eye">&nbsp;Ver Inscritos</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="{% url 'operador_noticias' %}"><i class="fa fa-bullhorn"></i> <span>Actividades</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{% url 'cr_act' %}">
+                                <div style="text-align: left" class="fa fa-plus">&nbsp;Crear Actividad</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'list_mod_act' %}">
+                                <div style="text-align: left" class="fa fa-eye">&nbsp;Listar y Modificar Actividad</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="#"><i class="fa fa-bullhorn"></i> <span>Noticias</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="active">
+                            <a href="{% url 'operador_noticias' %}">
+                                <div style="text-align: left" class="fa fa-plus">&nbsp;Crear Noticias</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'operador_noticia_select_modify' %}">
+                                <div style="text-align: left" class="fa fa-eye">&nbsp;Modificar Noticia</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'operador_noticias_ver' %}">
+                                <div style="text-align: left" class="fa fa-eye">&nbsp;Ver Noticias</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=""><a href="#">
+                    <i class="fa  fa-calendar"></i>
+                    <span>Calendario</span></a>
+                </li>
+            </ul>
+            <!-- /.sidebar-menu -->
+        </section>
+
+        <script>
+            function func(x) {
+                document.getElementById(x).style.border = "dashed";
+            }
+        </script>
+        <!-- /.sidebar -->
+    </aside>
+
+{% endblock menu %}
+
+{% block navegacion_derecha %}
+    <li style="margin-left: 10px">
+        <div class="navbar-btn">
+            <a href="{% url 'logout' %}">
+                <button type="button" class="btn btn-block btn-info">Sign out</button>
+            </a>
+        </div>
+    </li>
+    <li style="margin-left: 10px">
+        <form action="{% url 'lock' %}" method="post"> {% csrf_token %}
+            <div class="navbar-btn">
+                <button type="submit" class="btn btn-block btn-info">Suspender</button>
+            </div>
+        </form>
+    </li>
+
+
+    <!-- Control Sidebar Toggle Button -->
+    <li style="margin-left: 5px">
+        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+    </li>
+{% endblock navegacion_derecha %}
+
+{% block contenido_pagina %}
+    <div class="box box-warning">
+        <div class="box-header with-border">
+            <h3 class="box-title">Introduzca la informacíon de la noticia</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <form method="post" enctype="multipart/form-data"> {% csrf_token %}
+                <!-- text input -->
+                <div class="form-group">
+                </div>
+                <div class="form-group">
+                    <label>Nombre de la noticia:</label>
+                    {% bootstrap_field form_c_n.nombre show_label=False placeholder='el nombre de la notcia debe contener 200 o menos caracteres' %}
+
+                </div>
+                <div class = "form-group">
+                    <label>Contenido de la noticia:</label>
+                    {% bootstrap_field form_c_n.contenido show_label=False placeholder='introduzca aca el contenido de la noticia:' %}
+                </div>
+                <div class="form-group">
+                    <label>Seleccione el estado de la noticia</label>
+                    {% bootstrap_field form_c_n.estado show_label=False%}
+
+                </div>
+                <div class="form-group">
+                    <label>Seleccione la fecha de publicacion</label>
+                    {% bootstrap_field form_c_n.fecha_publicacion show_label=False%}
+
+                </div>
+                <div class="form-group">
+                    <label>Seleccione el evento de esta noticia</label>
+                    {% bootstrap_field form_c_n.evento show_label=False%}
+
+                </div>
+                <div class="form-group">
+                    <label>Seleccionar imagen del banner de la noticia</label>
+                    {% bootstrap_field form_c_n.banner show_label=False%}
+
+                </div>
+                <div class="pull-left">
+                    <button type="submit" class="btn btn-block btn-primary">Guardar</button>
+                </div>
+                <div class="col-md-offset-10">
+                    <button type="button" class="btn btn-block btn-primary">Cancelar</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+
+
+
+{% endblock contenido_pagina %}
+
+{% block titulo %}
+    <h1>
+        Crear Noticias
+    </h1>
+    <ol class="breadcrumb">
+
+    </ol>
+
+{% endblock titulo %}
+
+{% block more_script %}
+    <!-- Bootstrap 3.3.7 -->
+    <script src="{% static 'eventos/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- Select2 -->
+    <script src="{% static 'eventos/bower_components/select2/dist/js/select2.full.min.js' %}"></script>
+    <!-- InputMask -->
+    <script src="{% static 'eventos/plugins/input-mask/jquery.inputmask.js' %}"></script>
+    <script src="{% static 'eventos/plugins/input-mask/jquery.inputmask.date.extensions.js' %}"></script>
+    <script src="{% static 'eventos/plugins/input-mask/jquery.inputmask.extensions.js' %}"></script>
+    <!-- date-range-picker -->
+    <script src="{% static 'eventos/bower_components/moment/min/moment.min.js' %}"></script>
+    <script src="{% static 'eventos/bower_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+    <!-- bootstrap datepicker -->
+    <script src="{% static 'eventos/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+    <!-- bootstrap color picker -->
+    <script src="{% static 'eventos/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js' %}"></script>
+    <!-- bootstrap time picker -->
+    <script src="{% static 'eventos/plugins/timepicker/bootstrap-timepicker.min.js' %}"></script>
+    <!-- SlimScroll -->
+    <script src="{% static 'eventos/bower_components/jquery-slimscroll/jquery.slimscroll.min.js' %}"></script>
+    <!-- iCheck 1.0.1 -->
+    <script src="{% static 'eventos/dplugins/iCheck/icheck.min.js' %}"></script>
+    <!-- FastClick -->
+    <script src="{% static 'eventos/bower_components/fastclick/lib/fastclick.js' %}"></script>
+    <script>
+        $(function () {
+            //Date picker
+            $('#id_fecha_publicacion').datepicker({
+                autoclose: true,
+                timePicker: true,
+                orientation: 'bottom auto'
+            })
+            //Timepicker
+            $('.timepicker').timepicker({
+                showInputs: false
+            })
+        })
+    </script>
+{% endblock more_script %}
+
+{% block css %}
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="{% static 'eventos/bower_components/bootstrap-daterangepicker/daterangepicker.css' %}">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet"
+          href="{% static 'eventos/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css' %}">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="{% static 'eventos/plugins/iCheck/all.css' %}">
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet"
+          href="{% static 'eventos/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css' %}">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="{% static 'eventos/plugins/timepicker/bootstrap-timepicker.min.css' %}">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{% static 'eventos/bower_components/select2/dist/css/select2.min.css' %}">
+
+{% endblock css %}
+
+

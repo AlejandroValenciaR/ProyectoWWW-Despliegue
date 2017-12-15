@@ -1,0 +1,153 @@
+{% extends 'eventos/base.html' %}
+{% load static %}
+
+{% block menu %}
+
+    <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header" style="text-align: center;">Menu Operador</li>
+                <!-- Optionally, you can add icons to the links -->
+                <li class="treeview active">
+                    <a href="#"><i class="fa fa-calendar-o"></i> <span>Eventos</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="active">
+                            <a href="{% url 'index' %}">
+                                <div style="text-align: left" class="fa fa-dashboard">&nbsp;&nbsp;Dashboard</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'operador_eventos_crear'%}">
+                                <div style="text-align: left" class="fa fa-users">&nbsp;&nbsp;Crear</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'operador_eventos_select_modify' %}">
+                                <div style="text-align: left" class="fa fa-users">&nbsp;&nbsp;Editar</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'operador_eventos_ver' %}">
+                                <div style="text-align: left" class="fa fa-users">&nbsp;&nbsp;Listar</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="{% url 'operador_noticias' %}"><i class="fa fa-bullhorn"></i> <span>Participantes</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{% url 'ver_pre_ins' %}">
+                                <div style="text-align: left" class="fa fa-plus">&nbsp;Ver Pre-Inscritos</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'ver_ins' %}">
+                                <div style="text-align: left" class="fa fa-eye">&nbsp;Ver Inscritos</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="{% url 'operador_noticias' %}"><i class="fa fa-bullhorn"></i> <span>Actividades</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{% url 'cr_act' %}">
+                                <div style="text-align: left" class="fa fa-plus">&nbsp;Crear Actividad</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'list_mod_act' %}">
+                                <div style="text-align: left" class="fa fa-eye">&nbsp;Listar y Modificar Actividad</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="{% url 'operador_noticias' %}"><i class="fa fa-bullhorn"></i> <span>Noticias</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{% url 'operador_noticias' %}">
+                                <div style="text-align: left" class="fa fa-plus">&nbsp;Crear Noticias</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'operador_noticia_select_modify' %}">
+                                <div style="text-align: left" class="fa fa-eye">&nbsp;Modificar Noticia</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=""><a href="#">
+                    <i class="fa  fa-calendar"></i>
+                    <span>Calendario</span></a>
+                </li>
+            </ul>
+            <!-- /.sidebar-menu -->
+        </section>
+
+        <script>
+            function func(x) {
+                document.getElementById(x).style.border = "dashed";
+            }
+        </script>
+        <!-- /.sidebar -->
+    </aside>
+
+{% endblock menu %}
+
+{% block navegacion_derecha %}
+    <li style="margin-left: 10px">
+        <div class="navbar-btn">
+            <a href="{% url 'logout' %}">
+                <button type="button" class="btn btn-block btn-primary">Sign out</button>
+            </a>
+        </div>
+    </li>
+    <li style="margin-left: 10px">
+        <form action="{% url 'lock' %}" method="post"> {% csrf_token %}
+            <div class="navbar-btn">
+                <button type="submit" class="btn btn-block btn-primary">Suspender</button>
+            </div>
+        </form>
+    </li>
+
+
+    <!-- Control Sidebar Toggle Button -->
+    <li style="margin-left: 5px">
+        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+    </li>
+{% endblock navegacion_derecha %}
+
+{% block contenido_pagina %}
+
+    <div class="col-md-12">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <img class="col-xs-10" src="{% static 'eventos/dist/img/Website-Under-Construction.jpg'%}" width="100%" height="100%">
+            </div>
+        </div>
+    </div>
+
+{% endblock contenido_pagina %}

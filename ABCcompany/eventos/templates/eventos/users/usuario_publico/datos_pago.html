@@ -1,0 +1,101 @@
+{% extends 'eventos/base_home_logout.html' %}
+{% load static %}
+{% load bootstrap3 %}
+
+{% block menu %}
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <p style="color:white; font-size: 100%">
+                ABC Company
+            </p>
+        </a>
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navigation-example-2">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="#eventos" class="btn btn-danger btn-simple"><p style="color:#3d83ef;"></p>
+                </a>
+            </li>
+            <li>
+                <a href="#noticias" class="btn btn-info btn-block"><p style="color:white;">Consultar Inscripción</p></a>
+            </li>
+            <li>
+                <a href="{% url 'index' %}"
+                   class="btn btn-info btn-block"><p style="color:white;">Volver</p></a>
+            </li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+{% endblock menu %}
+
+{% block carousel %}
+{% endblock carousel %}
+
+{% block contenido_pagina %}
+    <br>
+    <br>
+    <div class="sec-title text-center wow animated fadeInDown">
+        <h2>Completar Inscrición <br><br>{{ evento.nombre }}</h2>
+    </div>
+    <p class="text-primary" style="text-align: center">
+        {% if evento.valor_inscripcion == 0 %}
+            Este evento no cobra inscripción, ¡Es Gratis!, Sin embargo debe esperar a que el<br>
+            personal encargado apruebe su solicitud. Puede utilizar nuestra
+            <a href="{% url 'indexPago' %}"> plataforma de consulta de inscripciones</a> <br>
+            para verificar el estado de su aprobación. Su numero de inscripción es: {{ inscrito.id }}
+        {% else %}
+            Para completar su inscripción al evento, por favor dirigase al siguiente link:
+            <a href="{% url 'indexPago' %}"> BANCOABC</a>, <br> y cancele el valor de la inscripción
+            de este evento, el cual es $ {{ evento.valor_inscripcion }} COP, <br>con el numero de pago:
+            {{ inscrito.id }}. Si ya realizo el pago omita esto.
+        {% endif %}
+        {
+
+    </p>
+
+    <br>
+    <br>
+
+
+{% endblock contenido_pagina %}
+
+{% block footer %}
+    <footer class="footer-demo section-dark">
+        <div class="container">
+            <nav class="pull-left">
+                <ul>
+
+                    <li>
+                        <a href="{% url 'index' %}">
+                            ABC Company
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'index' %}">
+                            .
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'index' %}">
+                            .
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright pull-right">
+                Proyecto de Aplicaciones WEB
+            </div>
+        </div>
+    </footer>
+
+{% endblock footer %}

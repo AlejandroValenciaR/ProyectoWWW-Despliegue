@@ -1,0 +1,118 @@
+{% extends 'eventos/base_home_logout.html' %}
+{% load static %}
+
+{% block menu %}
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <p style="color:white; font-size: 100%">
+                ABC Company
+            </p>
+        </a>
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navigation-example-2">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="#eventos" class="btn btn-danger btn-simple"><p style="color:#3d83ef;"></p>
+                </a>
+            </li>
+            <li>
+                <a href="#noticias" class="btn btn-danger btn-simple"><p style="color:#3d83ef;"></p></a>
+            </li>
+            <li>
+                <a href="{% url 'index' %}"
+                   class="btn btn-info btn-block"><p style="color: white;">Volver</p></a>
+            </li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+{% endblock menu %}
+
+{% block carousel %}
+
+{% endblock carousel %}
+
+{% block contenido_pagina %}
+    <section>
+        <br>
+        <br>
+    </section>
+
+    <section id="eventos">
+        <div class="container">
+            <div class="row">
+
+                <div class="sec-title text-center wow animated fadeInDown">
+                    <h2>Todos las noticias</h2>
+                </div>
+
+
+                <ul class="project-wrapper wow animated fadeInUp">
+                    {% for new in noticias_lista %}
+
+                        <li class="portfolio-item">
+                            <a href="{% url 'public_new' new.id %}">
+                                <img
+                                        src="{% static 'eventos/dist/img/imgnews/' %}{{ new.banner }}"
+                                        class="img-responsive"
+                                        style="height: 290px; width: 3810px">
+                                <figcaption class="mask">
+                                    <h3>{{ new.nombre }}</h3>
+                                </figcaption>
+                            </a>
+                        </li>
+
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section>
+        <br>
+        <br>
+        <br>
+        <br>
+    </section>
+
+
+{% endblock contenido_pagina %}
+
+{% block footer %}
+    <footer class="footer-demo section-dark">
+        <div class="container">
+            <nav class="pull-left">
+                <ul>
+
+                    <li>
+                        <a href="{% url 'index' %}">
+                            ABC Company
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'index' %}">
+                            .
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'index' %}">
+                            .
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright pull-right">
+                Proyecto de Aplicaciones WEB
+            </div>
+        </div>
+    </footer>
+
+{% endblock footer %}

@@ -1,0 +1,150 @@
+{% load static %}
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Credit Card Payment Form Template | PrepBootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'pago/bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'pago/font-awesome/css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'eventos/toastr/toastr.min.css' %}">
+
+    <script type="text/javascript" src="{% static 'pago/js/jquery-1.10.2.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'pago/bootstrap/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+
+<div class="container">
+
+<div class="page-header text-center">
+    <h1>ABC<small>ompany</small></h1>
+</div>
+
+<!-- Credit Card Payment Form - START -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <h3 class="text-center">BANCO ABC</h3>
+                        <img class="img-responsive cc-img" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form method="post" role="form"> {% csrf_token %}
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label>CARD NUMBER</label>
+                                    <div class="input-group">
+                                        {% bootstrap_field form_pago.cardnumber show_label=False placeholder="Valid Card Number"%}
+                                        <span class="input-group-addon"><span class="fa fa-credit-card"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-7 col-md-7">
+                                <div class="form-group">
+                                    <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                    {% bootstrap_field form_pago.expiration show_label=False%}
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-md-5 pull-right">
+                                <div class="form-group">
+                                    <label>CV CODE</label>
+                                    {% bootstrap_field form_pago.cvcode show_label=False placeholder="CVC"%}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label>CARD OWNER</label>
+                                    {% bootstrap_field form_pago.cardowner show_label=False placeholder="Card Owner Full Name" %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label>CEDULA</label>
+                                    {% bootstrap_field form_pago.cedula show_label=False placeholder="Owner DNI" %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label>VALOR A CANCELAR</label>
+                                    {% bootstrap_field form_pago.valor show_label=False placeholder="¿Cuanto va a consignar?" %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    {% bootstrap_field form_pago.robot show_label=False %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button class="btn btn-warning btn-lg btn-block">Pagar Inscripción</button>
+                        </div>
+                    </div>
+                </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .cc-img {
+        margin: 0 auto;
+    }
+</style>
+<!-- Credit Card Payment Form - END -->
+
+</div>
+<!-- jQuery 3 -->
+<script src="{% static 'eventos/bower_components/jquery/dist/jquery.min.js' %}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{% static 'eventos/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<!-- toastr -->
+<script src="{% static 'eventos/toastr/toastr.min.js' %}"></script>
+
+<script>
+
+    {% for msg in messages %}
+        $(document).ready(function () {
+            setTimeout(function () {
+                toastr.options = {
+
+                    "closeButton": true,
+                    "progressBar": true,
+                    "positionClass": "toast-bottom-right",
+                    "showEasing": "swing"
+
+                }
+                {% if msg.tags == "error" %}
+                    toastr["{{ msg.tags }}"]("{{ msg }}", "Ups, Tenemos un problema")
+                {% elif msg.tags == "success" %}
+                    toastr["{{ msg.tags }}"]("{{ msg }}", "¡Éxito!")
+                {% endif %}
+
+            }, 300);
+        });
+    {% endfor %}
+
+</script>
+</body>
+</html>

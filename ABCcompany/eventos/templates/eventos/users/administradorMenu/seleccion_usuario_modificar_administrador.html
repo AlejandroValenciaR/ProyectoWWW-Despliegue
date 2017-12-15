@@ -1,0 +1,140 @@
+{% extends 'eventos/base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+
+{% block menu %}
+
+    <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header" style="text-align: center;">MENU ADMINISTRADOR</li>
+                <!-- Optionally, you can add icons to the links -->
+                <li>
+                    <a href="{% url 'index' %}">
+                        <i class="fa fa-home"></i> <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="treeview active">
+                    <a href="#">
+                        <i class="fa  fa-users"></i>
+                        <span>Usuarios</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{% url 'administrador_usuario_crear' %}">
+                                <div style="text-align: left" class="fa fa-user-plus"> Registro</div>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="{% url 'administrador_usuario_selecting_modify' %}">
+                                <div style="text-align: left" class="fa  fa-cog"> Modificar</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'administrador_usuario_consulta' %}">
+                                <div style="text-align: left" class="fa  fa-search"> Consultar</div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+            <!-- /.sidebar-menu -->
+        </section>
+
+        <script>
+            function func(x) {
+                document.getElementById(x).style.border = "dashed";
+            }
+        </script>
+        <!-- /.sidebar -->
+    </aside>
+
+{% endblock menu %}
+
+{% block navegacion_derecha %}
+    <li style="margin-left: 10px">
+        <div class="navbar-btn">
+            <a href="{% url 'logout' %}">
+                <button type="button" class="btn btn-block btn-info">Cerrar sesión</button>
+            </a>
+        </div>
+    </li>
+    <li style="margin-left: 10px">
+        <form action="{% url 'lock' %}" method="post"> {% csrf_token %}
+            <div class="navbar-btn">
+                <button type="submit" class="btn btn-block btn-info">Suspender</button>
+            </div>
+        </form>
+    </li>
+
+
+    <!-- Control Sidebar Toggle Button -->
+    <li style="margin-left: 5px">
+        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+    </li>
+{% endblock navegacion_derecha %}
+
+{% block contenido_pagina %}
+    <!-- Horizontal Form -->
+    <div class="box box-info">
+
+    </div>
+    <!-- /.box -->
+
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="#"><b>Selecione Usuario</b></a>
+        </div>
+        <!-- /.login-logo -->
+        <div  class="login-box-body">
+            <p class="login-box-msg"></p>
+            <form action="{% url 'administrador_usuario_modificar' %}" method="post"> {% csrf_token %}
+                <div class="form-group has-feedback">
+                    {% bootstrap_field form_select.seleccion %}
+
+                </div>
+
+
+                <div class="row">
+                        <div class="col-md-offset-4 col-md-4">
+                            <button type="Submit" class="btn btn-primary btn-block btn-flat">Enviar</button>
+                        </div>
+                </div>
+            </form>
+
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+    <!-- /.login-box -->
+
+
+{% endblock contenido_pagina %}
+
+{% block titulo %}
+    <h1>
+    </h1>
+    <ol class="breadcrumb">
+
+    </ol>
+
+{% endblock titulo %}
+
+{% block more_script %}
+    <script src="{% static 'eventos/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+    <script>
+        $('#form').on('submit', function (e) {
+            //your awesome code here
+            $('#modal-info').modal('hide');
+        })
+    </script>
+{% endblock more_script %}
+

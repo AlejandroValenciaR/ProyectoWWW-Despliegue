@@ -1,0 +1,141 @@
+{% extends 'eventos/base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+
+{% block menu %}
+
+    <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header" style="text-align: center;">MENU ADMINISTRADOR</li>
+                <!-- Optionally, you can add icons to the links -->
+                <li>
+                    <a href="{% url 'index' %}">
+                        <i class="fa fa-home"></i> <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="treeview active">
+                    <a href="#">
+                        <i class="fa  fa-users"></i>
+                        <span>Usuarios</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li >
+                            <a href="{% url 'administrador_usuario_crear' %}">
+                                <div style="text-align: left" class="fa fa-user-plus"> Registro</div>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="{% url 'administrador_usuario_selecting_modify' %}">
+                                <div style="text-align: left" class="fa  fa-cog"> Modificar</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /.sidebar-menu -->
+        </section>
+
+        <script>
+            function func(x) {
+                document.getElementById(x).style.border = "dashed";
+            }
+        </script>
+        <!-- /.sidebar -->
+    </aside>
+
+{% endblock menu %}
+
+{% block navegacion_derecha %}
+    <li style="margin-left: 10px">
+        <div class="navbar-btn">
+            <a href="{% url 'logout' %}">
+                <button type="button" class="btn btn-block btn-info">Cerrar sesión</button>
+            </a>
+        </div>
+    </li>
+    <li style="margin-left: 10px">
+        <form action="{% url 'lock' %}" method="post"> {% csrf_token %}
+            <div class="navbar-btn">
+                <button type="submit" class="btn btn-block btn-info">Suspender</button>
+            </div>
+        </form>
+    </li>
+
+
+    <!-- Control Sidebar Toggle Button -->
+    <li style="margin-left: 5px">
+        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+    </li>
+{% endblock navegacion_derecha %}
+
+{% block contenido_pagina %}
+    <!-- Horizontal Form -->
+    <div class="box box-info">
+        <!-- form start -->
+        <form method="post" id="register_form">{% csrf_token %}
+            <div class="box-body">
+                {% bootstrap_field form_modify_user.cedula form_group_class='form-group has-feedback' placeholder='C.C' %}
+                {% bootstrap_field form_modify_user.nombre form_group_class='form-group has-feedback' placeholder='Nombres y Apellidos' %}
+                {% bootstrap_field form_modify_user.telefono form_group_class='form-group has-feedback' placeholder='Telefono fijo' set_required=False %}
+                {% bootstrap_field form_modify_user.celular form_group_class='form-group has-feedback' placeholder='Numero de celular' set_required=False %}
+                {% bootstrap_field form_modify_user.e_mail form_group_class='form-group has-feedback' placeholder='example@example.com' %}
+                {% bootstrap_field form_modify_user.tipo form_group_class='form-group has-feedback' %}
+                {% bootstrap_field form_modify_user.sexo form_group_class='form-group has-feedback' %}
+                {% bootstrap_field form_modify_user.direccion form_group_class='form-group has-feedback' placeholder='Av 5 # ...' %}
+                {% bootstrap_field form_modify_user.pais form_group_class='form-group has-feedback' %}
+                {% bootstrap_field form_modify_user.ciudad form_group_class='form-group has-feedback' placeholder='' %}
+                {% bootstrap_field form_modify_user.user %}
+                {% bootstrap_field form_modify_user.estado %}
+                <div class="row">
+                    <div class="col-xs-8">
+
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">
+                            Registrar
+                        </button>
+
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.modal -->
+            </div>
+        </form>
+    </div>
+    <!-- /.box -->
+
+
+
+{% endblock contenido_pagina %}
+
+{% block titulo %}
+    <h1>
+        Modificar usuario
+    </h1>
+    <ol class="breadcrumb">
+
+    </ol>
+
+{% endblock titulo %}
+
+{% block more_script %}
+    <script src="{% static 'eventos/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+    <script>
+        $('#form').on('submit', function (e) {
+            //your awesome code here
+            $('#modal-info').modal('hide');
+        })
+    </script>
+{% endblock more_script %}
+

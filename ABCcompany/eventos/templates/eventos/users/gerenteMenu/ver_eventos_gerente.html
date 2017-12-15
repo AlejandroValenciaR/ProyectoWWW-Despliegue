@@ -1,0 +1,189 @@
+{% extends 'eventos/base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+
+{% block menu %}
+
+    <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header" style="text-align: center;">MENU</li>
+                <!-- Optionally, you can add icons to the links -->
+                <li class="treeview active">
+                    <a href="#"><i class="fa fa-calendar-o"></i> <span>Eventos</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="#">
+                                <div style="text-align: left" class="fa fa-dashboard">&nbsp;&nbsp;Dashboard</div>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="{% url 'operador_eventos_ver' %}">
+                                <div style="text-align: left" class="fa fa-list">&nbsp;&nbsp;Listar Eventos</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div style="text-align: left" class="fa fa-users">&nbsp;&nbsp;Participantes</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-bar-chart"></i> <span>Reportes</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="#">
+                                <div style="text-align: left" class="fa fa-dashboard">&nbsp;&nbsp;Dashboard</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div style="text-align: left" class="fa fa-hand-o-right">&nbsp;&nbsp;Reporte 1</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div style="text-align: left" class="fa fa-hand-o-right">&nbsp;&nbsp;Reporte 2</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=""><a href="#">
+                    <i class="fa fa-bullhorn"></i>
+                    <span>Noticias</span></a>
+                </li>
+                <li class=""><a href="#">
+                    <i class="fa  fa-calendar"></i>
+                    <span>Calendario</span></a>
+                </li>
+            </ul>
+            <!-- /.sidebar-menu -->
+        </section>
+
+        <script>
+            function func(x) {
+                document.getElementById(x).style.border = "dashed";
+            }
+        </script>
+        <!-- /.sidebar -->
+    </aside>
+
+{% endblock menu %}
+
+{% block navegacion_derecha %}
+    <li style="margin-left: 10px">
+        <div class="navbar-btn">
+            <a href="{% url 'logout' %}">
+                <button type="button" class="btn btn-block btn-info">Sign out</button>
+            </a>
+        </div>
+    </li>
+    <li style="margin-left: 10px">
+        <form action="{% url 'lock' %}" method="post"> {% csrf_token %}
+            <div class="navbar-btn">
+                <button type="submit" class="btn btn-block btn-info">Suspender</button>
+            </div>
+        </form>
+    </li>
+
+
+    <!-- Control Sidebar Toggle Button -->
+    <li style="margin-left: 5px">
+        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+    </li>
+{% endblock navegacion_derecha %}
+
+{% block contenido_pagina %}
+
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Usuarios en el sistema</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>Nombre Evento</th>
+                    <th>Descripcion</th>
+                    <th>Estado</th>
+                    <th>Ubicacion</th>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha Fin</th>
+                    <th>Fecha Creacion</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for event in eventos %}
+                    <tr>
+                        <td>{{ event.nombre }}</td>
+                        <td>{{ event.descripcion }}</td>
+                        <td>{{ event.estado }}</td>
+                        <td>{{ event.ubicacion }}</td>
+                        <td>{{ event.fecha_inicio }}</td>
+                        <td>{{ event.fecha_fin }}</td>
+                        <td>{{ event.fecha_creacion }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+
+{% endblock contenido_pagina %}
+
+{% block titulo %}
+    <h1>
+        Ver Eventos
+    </h1>
+    <ol class="breadcrumb">
+
+    </ol>
+
+{% endblock titulo %}
+
+{% block css %}
+    <link rel="stylesheet"
+          href="{% static 'eventos/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}">
+
+{% endblock css %}
+
+{% block more_script %}
+    <script src="{% static 'eventos/bower_components/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'eventos/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js' %}"></script>
+    <!-- SlimScroll -->
+    <script src="{% static 'eventos/bower_components/jquery-slimscroll/jquery.slimscroll.min.js' %}"></script>
+    <!-- FastClick -->
+    <script src="{% static 'eventos/bower_components/fastclick/lib/fastclick.js' %}"></script>
+    <script>
+        $(function () {
+            $('#example1').DataTable()
+            $('#example2').DataTable({
+                'paging': true,
+                'lengthChange': false,
+                'searching': false,
+                'ordering': true,
+                'info': true,
+                'autoWidth': false
+            })
+        })
+    </script>
+{% endblock more_script %}
+
+

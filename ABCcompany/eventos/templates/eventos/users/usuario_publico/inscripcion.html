@@ -1,0 +1,143 @@
+{% extends 'eventos/base_home_logout.html' %}
+{% load static %}
+{% load bootstrap3 %}
+
+{% block menu %}
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <p style="color:white; font-size: 100%">
+                ABC Company
+            </p>
+        </a>
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navigation-example-2">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="#eventos" class="btn btn-danger btn-simple"><p style="color:#3d83ef;"></p>
+                </a>
+            </li>
+            <li>
+                <a href="#noticias" class="btn btn-danger btn-simple"><p style="color:#3d83ef;"></p></a>
+            </li>
+            <li>
+                <a href="{% url 'index' %}"
+                   class="btn btn-info btn-block"><p style="color: white;">Volver</p></a>
+            </li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+{% endblock menu %}
+
+{% block carousel %}
+{% endblock carousel %}
+
+{% block contenido_pagina %}
+    <br>
+    <br>
+    <div class="sec-title text-center wow animated fadeInDown">
+        <h2>Inscripción <br><br>{{ evento.nombre }}</h2>
+    </div>
+    <div class="filter-black"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 ">
+                <div class="register-card">
+                    <form method="post"> {% csrf_token %}
+                        <!-- text input -->
+                        <div class="form-group wow animated fadeInDown">
+                        </div>
+                        <div class="form-group wow animated fadeInDown">
+                            <label>Cedula:</label>
+                            {% bootstrap_field formulario.inscrito show_label=False placeholder='Cedula del particiante' %}
+
+                        </div>
+                        <div class="form-group wow animated fadeInDown">
+                            <label>Nombre Completo:</label>
+                            {% bootstrap_field formulario.nombre_inscrito show_label=False placeholder='Nombre del Participante' %}
+                        </div>
+                        <div class="form-group wow animated fadeInDown">
+                            <label>Pais:</label>
+                            {% bootstrap_field formulario.pais show_label=False %}
+
+                        </div>
+                        <div class="form-group wow animated fadeInDown">
+                            <label>Género Biológico:</label>
+                            {% bootstrap_field formulario.sexo show_label=False %}
+
+                        </div>
+                        <div class="form-group wow animated fadeInDown">
+                            <label>Celular:</label>
+                            {% bootstrap_field formulario.celular show_label=False placeholder='Celular del Participante'%}
+
+                        </div>
+                        <div class="form-group wow animated fadeInDown">
+                            <label>Telefono</label>
+                            {% bootstrap_field formulario.telefono show_label=False placeholder='Telefono del Participante'%}
+
+                        </div>
+                        <div class="form-group wow animated fadeInDown">
+                            <label>E-mail:</label>
+                            {% bootstrap_field formulario.email show_label=False placeholder='example@example.ex'%}
+
+                        </div>
+                        <div class="form-group wow animated fadeInDown">
+                            <label>Dirección Residencial: (Opcional)</label>
+                            {% bootstrap_field formulario.direccion_inscrito show_label=False placeholder='Dirección del Participante'%}
+
+                        </div>
+                        <button class="btn btn-info btn-block wow animated fadeInDown">Incribirse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <br>
+    <br>
+
+
+{% endblock contenido_pagina %}
+
+{% block footer %}
+    <footer class="footer-demo section-dark">
+        <div class="container">
+            <nav class="pull-left">
+                <ul>
+
+                    <li>
+                        <a href="{% url 'index' %}">
+                            ABC Company
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'index' %}">
+                            .
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'index' %}">
+                            .
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright pull-right">
+                Proyecto de Aplicaciones WEB
+            </div>
+        </div>
+    </footer>
+
+{% endblock footer %}

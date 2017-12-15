@@ -1,0 +1,41 @@
+from django.conf.urls import  url
+from django.contrib.auth.views import login
+from . import views
+
+urlpatterns = [
+    # ex: /eventos/
+    url(r'^$', views.index, name='index'),
+    url(r'^index$', views.index, name='index2'),
+    url(r'^login$', views.login_page, name='login'),
+    url(r'^logout$', views.logout_page, name='logout'),
+    url(r'^registro$', views.register, name='registro'),
+    url(r'^lock$', views.lock, name='lock'),
+    url(r'^operador/crear_noticia$', views.operador_crear_noticia,name = "operador_noticias"),
+    url(r'^operador/ver_noticia$', views.operador_ver_noticias,name = "operador_noticias_ver"),
+    url(r'^operador/ver_evento$', views.operador_ver_eventos,name = "operador_eventos_ver"),
+    url(r'^operador/crear_evento$', views.operador_crear_evento,name = "operador_eventos_crear"),
+    url(r'^operador/modificar_evento$', views.operador_modificar_evento,name = "operador_eventos_modificar"),
+    url(r'^operador/seleccionar_evento$', views.operador_modificar_evento_seleccionar,name = "operador_eventos_select_modify"),
+    url(r'^operador/modificar_noticia$', views.operador_modificar_noticia,name = "operador_noticia_modificar"),
+    url(r'^operador/seleccionar_noticia$', views.operador_modificar_noticia_seleccionar,name = "operador_noticia_select_modify"),
+    url(r'^administrador/crear_usuario$', views.admin_crear_usuario,name = "administrador_usuario_crear"),
+    url(r'^administrador/seleccion_usuario$', views.admin_modificar_usuario_seleccion,name = "administrador_usuario_selecting_modify"),
+    url(r'^administrador/modificar_usuario$', views.admin_modificar_usuario,name = "administrador_usuario_modificar"),
+    url(r'^administrador/consultar_usuario$', views.administrador_consultar_usuarios ,name = "administrador_usuario_consulta"),
+    url(r'^evento/(?P<event_id>[0-9]+)$', views.public_event, name='public_event'),
+    url(r'^evento/all', views.all_events, name='all_events'),
+    url(r'^noticia/(?P<new_id>[0-9]+)$', views.public_new, name='public_new'),
+    url(r'^noticia/all', views.all_news, name='all_news'),
+    url(r'^inscripcion/evento/(?P<event_id>[0-9]+)$', views.ins_event, name='inscripcion_evento'),
+    url(r'^11ce90de02275791ef32cfdbcbd4c754/8875db2de54c570d54de078e232a7767/(?P<ins_id>[0-9]+)$', views.datos_pago, name='5da5cbf2133d0ab9cd4616a8cd32756d'),
+    url(r'^consultar/inscripcion/categoria$', views.consultar_categoria_inscripcion, name='con_cat_ins'),
+    url(r'^consultar/inscripcion/categoria/pago$', views.consultar_categoria_pago, name='con_cat_ins_pa'),
+    url(r'^consultar/inscripcion/categoria/cedula$', views.consultar_categoria_cedula, name='con_cat_ins_ce'),
+    url(r'^consultar/inscripcion/(?P<pay_id>[0-9]+)/resultado$', views.resultado_consulta_inscripcion, name='con_cat_ins_re'),
+    url(r'^operador/participante/aceptar/(?P<pay_id>[0-9]+)', views.aceptar_ins, name='aceptar_ins'),
+    url(r'^operador/participante/rechazar/(?P<pay_id>[0-9]+)', views.rechazar_ins, name='rechazar_ins'),
+    url(r'^operador/participantes/ver_preinscritos', views.ver_pre_ins, name='ver_pre_ins'),
+    url(r'^operador/participantes/ver_inscritos', views.ver_ins, name='ver_ins'),
+    url(r'^operador/actividades/crear', views.cr_act, name='cr_act'),
+    url(r'^operador/actividades/listarmodificar', views.list_mod_act, name='list_mod_act'),
+]
